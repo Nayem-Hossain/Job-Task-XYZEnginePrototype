@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Chart, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -68,7 +68,7 @@ const DataVisualization = ({ columnKP, columnX }) => {
     ],
   };
 
-  return <Chart type={"line"} options={options} data={chartData} className='border border-slate-300 m-10 p-10' />;
+  return <Line options={options} data={chartData} className='border border-slate-300 m-10 p-10' />;
 };
 
 export default DataVisualization;

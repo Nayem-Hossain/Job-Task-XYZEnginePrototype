@@ -75,7 +75,7 @@ function StepOneForm(props) {
 
                 <button
                     type="submit"
-                    className="rounded-full bg-cyan-300 px-6 py-2 border-cyan-700"
+                    className="mb-4 rounded-full bg-cyan-300 px-6 py-2 border border-cyan-800"
                 >
                     Next
                 </button>

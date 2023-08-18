@@ -68,7 +68,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         htmlFor="csvFile"
@@ -84,7 +84,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="max_X">Max X:</label>
                     <input
                         type="number"
@@ -97,7 +97,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="min_X">Min X:</label>
                     <input
                         type="number"
@@ -110,7 +110,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="max_Y">Max Y:</label>
                     <input
                         type="number"
@@ -123,7 +123,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="min_Y">Min Y:</label>
                     <input
                         type="number"
@@ -136,7 +136,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="max_Z">Max Z:</label>
                     <input
                         type="number"
@@ -149,7 +149,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <div>
+                <div className="mb-4">
                     <label htmlFor="min_Z">Min Z:</label>
                     <input
                         type="number"
@@ -162,7 +162,7 @@ const StepTwoForm = (props) => {
                     />
                 </div>
 
-                <button type="submit" className="rounded-full bg-cyan-300 px-6 py-2 border-cyan-700" >Submit</button>
+                <button type="submit" className="mb-4 rounded-full bg-cyan-300 px-6 py-2 border border-cyan-700" >Submit</button>
             </form>
         </>
     );
