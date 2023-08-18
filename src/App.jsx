@@ -7,6 +7,8 @@ import ShowResults from "./components/ShowResults";
 const App = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [columnKP, setColumnKP] = useState([]);
+  const [columnX, setColumnX] = useState([]);
   const [isReadable, setIsReadable] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const [formData, setFormData] = useState({
@@ -59,6 +61,12 @@ const App = () => {
           console.log("row values : ", rowValues);
 
           if (rowValues.length >= 4) {
+            columnKP.push(parseFloat(rowValues[0]));
+            setColumnKP([...columnKP]);
+
+            columnX.push(parseFloat(rowValues[1]));
+            setColumnX([...columnX]);
+
             const x = parseFloat(rowValues[1]);
             console.log("all values of column X: ", x);
             const y = parseFloat(rowValues[2]);
@@ -115,29 +123,28 @@ const App = () => {
   };
   return (
     <>
-        {isSubmit ? (
-          <ShowResults results={formData} />
-        ) : (
-          <div className="flex items-center justify-center">
-            {step === 1 && (
-              <StepOneForm
-                formData={formData}
-                handleInputChange={handleInputChange}
-                handleSubmitFormStep1={handleSubmitFormStep1}
-              ></StepOneForm>
-            )}
-            {step === 2 && (
-              <StepTwoForm
-                isReadable={isReadable}
-                isSubmit={isSubmit}
-                formData={formData}
-                handleFileUpload={handleFileUpload}
-                handleInputChange={handleInputChange}
-                handleSubmitFormStep2={handleSubmitFormStep2}
-              ></StepTwoForm>
-            )}
-          </div>
-        )}
+      {isSubmit ? (
+        <ShowResults results={formData} columnKP={columnKP} columnX={columnX} />
+      ) : (
+        <div className="flex items-center justify-center">
+          {step === 1 && (
+            <StepOneForm
+              formData={formData}
+              handleInputChange={handleInputChange}
+              handleSubmitFormStep1={handleSubmitFormStep1}
+            ></StepOneForm>
+          )}
+          {step === 2 && (
+            <StepTwoForm
+              isReadable={isReadable}
+              formData={formData}
+              handleFileUpload={handleFileUpload}
+              handleInputChange={handleInputChange}
+              handleSubmitFormStep2={handleSubmitFormStep2}
+            ></StepTwoForm>
+          )}
+        </div>
+      )}
     </>
   );
 };

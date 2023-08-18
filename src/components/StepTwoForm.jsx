@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StepTwoForm = (props) => {
-    const { isReadable, isSubmit, formData, handleFileUpload, handleInputChange, handleSubmitFormStep2 } = props;
+    const { isReadable, formData, handleFileUpload, handleInputChange, handleSubmitFormStep2 } = props;
     return (
         <>
             <form onSubmit={handleSubmitFormStep2} id="formStep2" className="w-1/2">
