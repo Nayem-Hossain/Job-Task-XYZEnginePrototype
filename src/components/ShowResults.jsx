@@ -109,7 +109,7 @@ const ShowResults = ({ results, columnKP, columnX }) => {
                             <td className="px-6 py-4">{results.projectDescription}</td>
                             <td className="px-6 py-4">{results.client}</td>
                             <td className="px-6 py-4">{results.contractor}</td>
-                            <td className="px-6 py-4">{results.csvFile.name}</td>
+                            <td className="px-6 py-4">{(results.csvFile) ? results.csvFile?.name : "Null"}</td>
                             <td className="px-6 py-4">{results.max_X}</td>
                             <td className="px-6 py-4">{results.min_X}</td>
                             <td className="px-6 py-4">{results.max_Y}</td>
@@ -121,7 +121,7 @@ const ShowResults = ({ results, columnKP, columnX }) => {
                 </table>
             </div>
 
-            <DataVisualization columnKP={columnKP} columnX={columnX}/>
+            {results.csvFile && <DataVisualization columnKP={columnKP} columnX={columnX}/>}
         </div>
     );
 };
